@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    header("Location: /cryptovault/index.php" );
+    header("Location: /cryptovault/index" );
     exit(); 
 } else {
     echo "Form data not received!";

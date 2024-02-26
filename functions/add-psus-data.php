@@ -2,9 +2,6 @@
 
 require '../includes/db.php';
 
-error_reporting(E_ALL); 
-ini_set('display_errors', 1);
-
 $fetch_all_location = "SELECT * FROM locations;";
 $fetch_all_customers = "SELECT * FROM customers;";
 
@@ -40,8 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $condition = mysqli_real_escape_string($db, $_POST['condition-' . $i]);
 
         // Map location and customer names to their corresponding IDs dynamically
-        $locationId = mapNameToId($location, $locations, 3);
-        $customerId = mapNameToId($customer, $customers, 4);
+        $locationId = mapNameToId($location, $locations, 1);
+        $customerId = mapNameToId($customer, $customers, 5);
 
         $add_m_miners = "
             INSERT INTO power_supplies(psu_sn, psu_model, location_id, customer_id, psu_condition) 
@@ -53,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    header("Location: /cryptovault/index.php" );
+    header("Location: /cryptovault/index" );
     exit(); 
 } else {
     echo "Form data not received!";

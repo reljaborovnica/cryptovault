@@ -42,7 +42,7 @@ if(!isset($_SESSION['username'])){
               $customer_name = $fetch_q_gac['customer_name'];
             ?>
             <tr>
-              <td><a href="customer.php?customerAll=<?php echo $customer_id;?>"> <?php echo $customer_name; ?></td>
+              <td><a href="customer?customerAll=<?php echo $customer_id;?>"> <?php echo $customer_name; ?></td>
               <td class="operations">
                 <?php
                 $check_miners_query = mysqli_query($db, "SELECT COUNT(*) AS total_miners FROM miners WHERE customer_id = '$customer_id'");
@@ -58,7 +58,7 @@ if(!isset($_SESSION['username'])){
                 if ($miners_count > 0 || $psus_count > 0 || $cbs_count > 0 || $fans_count > 0 ) {
                   echo "<span style='color: red;'></span><b>Unable to delete: This customer has items currently in use or in storage</b>";
                 } else {
-                  echo "<a href='customers.php?del=$customer_id'>❌</a>";
+                  echo "<a href='customers?del=$customer_id'>❌</a>";
                 }
                 ?>
               </td>
@@ -66,7 +66,7 @@ if(!isset($_SESSION['username'])){
             <?php };?>
           </tbody>
         </table>
-        <div id="c-b"><a href = "add-customer.php"><h2><center>Add a new customer</center></h2></a>
+        <div id="c-b"><a href = "add-customer"><h2><center>Add a new customer</center></h2></a>
       </div>
     </div>
 
@@ -87,7 +87,7 @@ if(isset($_GET['del']) && !empty($_GET['del'])){
     
     $delete_customer = mysqli_query($db, "DELETE FROM customers WHERE customer_id = '$c_id'");
     echo "<center>Customer deleted successfully.</center>";
-    header("Location: customers.php");
+    header("Location: customers");
 
   } catch (Exception $e) {
       echo "<center>Could not delete customer: " . $e->getMessage() . "</center>";

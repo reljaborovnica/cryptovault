@@ -48,24 +48,3 @@ if(!isset($_SESSION['username'])){
   </body>
 </html>
 
-<?php
-
-  if(isset($_GET['search-btn'])){
-    $search_term = $_GET['search'];
-    header("Location: miner.php?search=$search_term");
-    exit;
-  }
-
-  if(isset($_GET['search-btn-psu'])){
-    $search_psu_term = $_GET['search-psu'];
-    header("Location: psu.php?search=$search_psu_term");
-    exit;
-  }
-
-  if(isset($_GET['search-btn-cb'])){
-    $search_cb_term = $_GET['search-psu'];
-    header("Location: cb.php?search=$search_cb_term");
-    exit;
-  }
-
-?>

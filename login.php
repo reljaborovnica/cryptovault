@@ -51,7 +51,7 @@ if(isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['passwo
 
   if($username == $user && $password == $pass){
     $_SESSION['username'] = $username;
-    header("Location: index.php");
+    header("Location: index");
     exit();
   }else{
     echo "Invalid username or password";

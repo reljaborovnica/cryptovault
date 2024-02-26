@@ -54,7 +54,7 @@ if(!isset($_SESSION['username'])){
         </thead>
         <tbody>
           <tr>
-          <td><a href="customer-miner.php?id=<?php echo $customer_id;?>">View Customer Miners (<?php echo $m_count;?>)</a></td>
+          <td><a href="customer-miners/id=<?php echo $customer_id;?>">View Customer Miners (<?php echo $m_count;?>)</a></td>
             <td>View all miners for a specific customer.</td>
           </tr>
           <tr>

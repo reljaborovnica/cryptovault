@@ -54,19 +54,19 @@ if(!isset($_SESSION['username'])){
         </thead>
         <tbody>
           <tr>
-          <td><a href="location-miner.php?id=<?php echo $location_id;?>">View Location Miners (<?php echo $m_count;?>)</a></td>
+          <td><a href="location-miner?id=<?php echo $location_id;?>">View Location Miners (<?php echo $m_count;?>)</a></td>
             <td>View all miners for a specific location.</td>
           </tr>
           <tr>
-            <td><a href="location-psu.php?id=<?php echo $location_id;?>">View Location Power Supplies (<?php echo $p_count;?>)</a></td>
+            <td><a href="location-psu?id=<?php echo $location_id;?>">View Location Power Supplies (<?php echo $p_count;?>)</a></td>
             <td>View all power supplies for a specific location.</td>
           </tr>
           <tr>
-            <td><a href="location-cb.php?id=<?php echo $location_id;?>">View Location Control Boards (<?php echo $cb_count;?>)</a></td>
+            <td><a href="location-cb?id=<?php echo $location_id;?>">View Location Control Boards (<?php echo $cb_count;?>)</a></td>
             <td>View all control boards for a specific location.</td>
           </tr>
           <tr>
-            <td><a href="location-fan.php?id=<?php echo $location_id;?>">View Location Fans (<?php echo $fan_count;?>) </a></td>
+            <td><a href="location-fan?id=<?php echo $location_id;?>">View Location Fans (<?php echo $fan_count;?>) </a></td>
             <td>View all fans for a specific location.</td>
           </tr>
         </tbody>

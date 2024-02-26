@@ -17,8 +17,8 @@ if (!isset($_SESSION['username'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CryptoVault PSUs</title>
     <link rel="icon" type="image/x-icon" href="images/warehouse.png">
-    <link rel="stylesheet" href="./css/navbar.css"/>
-    <link rel="stylesheet" href="./css/tables.css">
+    <link rel="stylesheet" href="/cryptovault/css/navbar.css"/>
+    <link rel="stylesheet" href="/cryptovault/css/tables.css">
   </head>
   <body>
 
@@ -109,7 +109,7 @@ if (!isset($_SESSION['username'])) {
                                   <td><input type="text" style="width: 90px;" name="psu-ticket" value="<?php echo htmlspecialchars($psu_ticket); ?>"></td>
                                   <td class="operations">
                                       <button type="submit" name="update" style="background-color: transparent; border: none; cursor: pointer;" value="<?php echo $psu_id; ?>">✔️</button>
-                                      <a href="customer-psu.php?delete=<?php echo $psu_id; ?>" class="myLink">❌</a>
+                                      <a href="customer-psu?delete=<?php echo $psu_id; ?>" class="myLink">❌</a>
                                   </td>
                               </form>
                           </tr>

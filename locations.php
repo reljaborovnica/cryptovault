@@ -41,7 +41,7 @@ if(!isset($_SESSION['username'])){
               $location_name = $fetch_q_gal['location_name'];
             ?>
             <tr>
-              <td><a href="location.php?locationAll=<?php echo $location_id;?>"> <?php echo $location_name; ?></td>
+              <td><a href="location?locationAll=<?php echo $location_id;?>"> <?php echo $location_name; ?></td>
               <td class="operations">
                 <?php
                 $check_miners_query = mysqli_query($db, "SELECT COUNT(*) AS total_miners FROM miners WHERE location_id = '$location_id'");
@@ -57,7 +57,7 @@ if(!isset($_SESSION['username'])){
                 if ($miners_count > 0 || $psus_count > 0 || $cbs_count > 0 || $fans_count > 0 ) {
                   echo "<span style='color: red;'></span><b>Unable to delete: This location has items currently in use or in storage</b>";
                 } else {
-                  echo "<a href='locations.php?del=$location_id'>❌</a>";
+                  echo "<a href='locations?del=$location_id'>❌</a>";
                 }
                 ?>
               </td>
@@ -65,7 +65,7 @@ if(!isset($_SESSION['username'])){
             <?php };?>
           </tbody>
         </table>
-        <div id="c-b"><a href = "add-location.php"><h2><center>Add a new location</center></h2></a>
+        <div id="c-b"><a href = "add-location"><h2><center>Add a new location</center></h2></a>
       </div>
     </div>
 
@@ -86,7 +86,7 @@ if(isset($_GET['del']) && !empty($_GET['del'])){
     
     $delete_customer = mysqli_query($db, "DELETE FROM locations WHERE location_id = '$c_id'");
     echo "<center>Location deleted successfully.</center>";
-    header("Location: locations.php");
+    header("Location: locations");
 
   } catch (Exception $e) {
       echo "<center>Could not delete location: " . $e->getMessage() . "</center>";

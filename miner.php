@@ -5,7 +5,7 @@ require 'functions/export.php';
 
 session_start();
 if(!isset($_SESSION['username'])){
-  header("Location: login.php");
+  header("Location: login");
   exit();
 }
 
@@ -15,8 +15,8 @@ if(!isset($_SESSION['username'])){
   <head>
     <title>CryptoVault - Miner</title>
     <link rel="icon" type="image/x-icon" href="images/warehouse.png">
-    <link rel="stylesheet" href="./css/navbar.css"/>
-    <link rel="stylesheet" href="./css/tables.css">
+    <link rel="stylesheet" href="/cryptovault/css/navbar.css"/>
+    <link rel="stylesheet" href="/cryptovault/css/tables.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
@@ -118,7 +118,7 @@ if(!isset($_SESSION['username'])){
                                     </td>
                                     <td class="operations">
                                         <button type="submit" name="update" style="background-color: transparent; border: none; cursor: pointer;" value="<?php echo $miner_id; ?>">✔️</button>
-                                        <a href="miner.php?delete=<?php echo $miner_id;?>" class="myLink">❌</a>
+                                        <a href="miner?delete=<?php echo $miner_id;?>" class="myLink">❌</a>
                                     </td>
                                 </form>
                             </tr>

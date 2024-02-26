@@ -1,0 +1,17 @@
+RewriteEngine on
+
+RewriteBase /cryptovault/
+
+RewriteRule ^miner/search/([^/]+)/?$ miner.php?search=$1 [L,QSA]
+RewriteCond %{QUERY_STRING} ^search=(.+)&search-btn=Search$
+RewriteRule ^miner.php$ miner/search/%1? [R=301,L]
+
+RewriteRule ^psu/search/([^/]+)/?$ psu.php?search=$1 [L,QSA]
+RewriteCond %{QUERY_STRING} ^search=(.+)&search-btn-psu=Search$
+RewriteRule ^psu.php$ psu/search/%1? [R=301,L]
+
+RewriteRule ^cb/search/([^/]+)/?$ cb.php?search=$1 [L,QSA]
+RewriteCond %{QUERY_STRING} ^search=(.+)&search-btn-cb=Search$
+RewriteRule ^cb.php$ cb/search/%1? [R=301,L]
+
+RewriteRule ^(index|psu|miner|cb|add-cb|add-cbs|add-fan|add-psu|add-psus|add-miner|add-miners|locations|customers|location-cb|location-miner|location-fan|location-psu|location|customer|customer-psu|customer-miner|customer-fan|customer-cb|add-location|add-customer|logout|login|search)$ $1.php [NC,L]

@@ -5,7 +5,7 @@ require 'functions/export.php';
 
 session_start();
 if(!isset($_SESSION['username'])){
-  header("Location: login.php");
+  header("Location: login");
   exit();
 }
 
@@ -15,8 +15,8 @@ if(!isset($_SESSION['username'])){
   <head>
     <title>CryptoVault - CB</title>
     <link rel="icon" type="image/x-icon" href="images/warehouse.png">
-    <link rel="stylesheet" href="./css/navbar.css"/>
-    <link rel="stylesheet" href="./css/tables.css">
+    <link rel="stylesheet" href="/cryptovault/css/navbar.css"/>
+    <link rel="stylesheet" href="/cryptovault/css/tables.css">
   </head>
   <body>
 
@@ -114,7 +114,7 @@ if(!isset($_SESSION['username'])){
                                     <td><input type="text" style="width: 90px;" name="cb-ticket" value="<?php echo htmlspecialchars($cb_ticket);?>"></td>
                  <td class="operations">
                   <button type="submit" name="update" style="background-color: transparent; border: none; cursor: pointer;" value="<?php echo $cb_id; ?>">✔️</button>
-                  <a href="cb.php?delete=<?php echo $cb_id;?>" class="myLink">❌</a>
+                  <a href="cb?delete=<?php echo $cb_id;?>" class="myLink">❌</a>
                 </td>
               </tr>
               </form>

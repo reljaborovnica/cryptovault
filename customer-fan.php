@@ -17,8 +17,8 @@ if(!isset($_SESSION['username'])){
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CryptoVault - Fans</title>
   <link rel="icon" type="image/x-icon" href="images/warehouse.png">
-  <link rel="stylesheet" href="./css/navbar.css"/>
-  <link rel="stylesheet" href="./css/tables.css">
+  <link rel="stylesheet" href="/cryptovault/css/navbar.css"/>
+  <link rel="stylesheet" href="/cryptovault/css/tables.css">
 </head>
 <body>
     

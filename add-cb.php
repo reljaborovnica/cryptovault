@@ -67,7 +67,7 @@ if(!isset($_SESSION['username'])){
       </div>
             <div class="etc"><br><br>
 
-        <a href="add-cbs.php" style="text-decoration: none; color: #ffffff; padding: 12px 24px; background-color: #4CAF50; border-radius: 8px; border: 2px solid #4CAF50; font-weight: bold; text-transform: uppercase; transition: background-color 0.3s ease;">Add Multiple Control Boards</a>
+        <a href="add-cbs" style="text-decoration: none; color: #ffffff; padding: 12px 24px; background-color: #4CAF50; border-radius: 8px; border: 2px solid #4CAF50; font-weight: bold; text-transform: uppercase; transition: background-color 0.3s ease;">Add Multiple Control Boards</a>
 
       </div>
     </div>

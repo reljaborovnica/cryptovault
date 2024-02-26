@@ -4,7 +4,7 @@ require 'includes/db.php';
 
 session_start();
 if(!isset($_SESSION['username'])){
-  header("Location: login.php");
+  header("Location: login");
   exit();
 }
 
@@ -153,7 +153,7 @@ if(!isset($_SESSION['username'])){
                     $miner_psu_sn = $fetch_glm['psu_sn'];
                     $customer_name = $fetch_glm['customer_name'];
                 ?>
-                <tr class="clickable" onclick="window.location='miner/search/<?php echo $miner_label;?>'">
+                <tr class="clickable" onclick="window.location='miner/search/<?php echo $miner_sn;?>'">
                     <td><?php echo htmlspecialchars($miner_label);?></td>
                     <td><?php echo htmlspecialchars($miner_sn);?></td>
                     <td><?php echo htmlspecialchars($miner_model);?></td>

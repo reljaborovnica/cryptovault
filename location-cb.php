@@ -32,7 +32,7 @@ if(!isset($_SESSION['username'])){
             $get_cb_data = 
               "
                 SELECT 
-                  cb.cb_id, cb.cb_sn, cb.cb_model, cb.ticket, l.location_name, l.location_id, c.customer_id ,c.customer_name
+                  cb.cb_id, cb.cb_sn, cb.cb_model, cb.ticket, l.location_name, l.location_id, c.customer_id ,c.customer_name, cb.cb_condition
                 FROM control_boards cb
                   JOIN locations l ON cb.location_id = l.location_id
                   JOIN customers c ON cb.customer_id = c.customer_id 
@@ -50,6 +50,7 @@ if(!isset($_SESSION['username'])){
                     <tr>
                         <th>Serial Number</th>
                         <th>Model</th>
+                        <th>Condition</th>
                         <th>Location</th>
                         <th>Customer Name</th>
                         <th>Ticket</th>
@@ -67,11 +68,13 @@ if(!isset($_SESSION['username'])){
                         $cb_customer_name = $cb_row['customer_name'];
                         $cb_location_id = $cb_row['location_id'];
                         $cb_location = $cb_row['location_name'];
+                        $cb_condition = $cb_row['cb_condition'];
                         ?>
                         <tr>
                             <form method="POST" action="">
                                 <td><input type="text" name="cb-sn" value="<?php echo htmlspecialchars($cb_sn); ?>"></td>
                                 <td><input type="text" name="cb-model" value="<?php echo htmlspecialchars($cb_model); ?>"></td>
+                                <td><input type="text" name="cb-condition" value="<?php echo htmlspecialchars($cb_condition); ?>"></td>
                                 <td>
                                     <select name="locationChange">
                                       <?php
@@ -162,6 +165,7 @@ if(isset($_POST['update'])){
     $cb_ticket_up = mysqli_real_escape_string($db, $_POST['cb-ticket']);
     $cb_location_up = mysqli_real_escape_string($db, $_POST['locationChange']);
     $cb_customer_name_up = mysqli_real_escape_string($db, $_POST['customerChange']);
+    $cb_condition = mysqli_real_escape_string($db, $_POST['cb-condition']);
 
     $update_query = "
             UPDATE control_boards 
@@ -169,6 +173,7 @@ if(isset($_POST['update'])){
                 cb_sn = '$cb_sn_up',
                 cb_model = '$cb_model_up',
                 cb_sn = '$cb_sn_up',
+                cb_condition = '$cb_condition',
                 location_id = '$cb_location_up',
                 customer_id = '$cb_customer_name_up',
                 ticket = '$cb_ticket_up'
@@ -187,12 +192,12 @@ if(isset($_POST['update'])){
 }
 
 //Export XLSX
-$columns = ['cb_sn', 'cb_model', 'ticket', 'location_name', 'customer_name'];
+$columns = ['cb_sn', 'cb_model', 'cb_condition', 'ticket', 'location_name', 'customer_name'];
 $get_cbs_data_xlsx =
               "
 
                 SELECT 
-                  cb.cb_sn, cb.cb_model, cb.ticket, l.location_name, c.customer_name
+                  cb.cb_sn, cb.cb_model, cb_condition, cb.ticket, l.location_name, c.customer_name
                 FROM control_boards cb
                   JOIN locations l ON cb.location_id = l.location_id
                   JOIN customers c ON cb.customer_id = c.customer_id 

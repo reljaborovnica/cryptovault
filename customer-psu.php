@@ -32,7 +32,7 @@ if (!isset($_SESSION['username'])) {
               $get_psu_data =
                   "
                             SELECT 
-                              ps.psu_id, ps.psu_sn, ps.psu_model, ps.ticket, l.location_name, l.location_id, c.customer_id ,c.customer_name
+                              ps.psu_id, ps.psu_sn, ps.psu_model, ps.ticket, l.location_name, l.location_id, c.customer_id ,c.customer_name, ps.psu_condition
                             FROM power_supplies ps
                               JOIN locations l ON ps.location_id = l.location_id
                               JOIN customers c ON ps.customer_id = c.customer_id 
@@ -51,6 +51,7 @@ if (!isset($_SESSION['username'])) {
                       <tr>
                           <th>Serial Number</th>
                           <th>Model</th>
+                          <th>Condition</th>
                           <th>Location</th>
                           <th>Customer Name</th>
                           <th>Ticket</th>
@@ -68,11 +69,13 @@ if (!isset($_SESSION['username'])) {
             $psu_customer_name = $psu_row['customer_name'];
             $psu_location_id = $psu_row['location_id'];
             $psu_location = $psu_row['location_name'];
+            $psu_condition = $psu_row['psu_condition'];
             ?>
                           <tr>
                               <form method="POST" action="">
                                   <td><input type="text" name="psu-sn" value="<?php echo $psu_sn; ?>"></td>
                                   <td><input type="text" name="psu-model" value="<?php echo $psu_model; ?>"></td>
+                                  <td><input type="text" name="psu-condition" value="<?php echo htmlspecialchars($psu_condition); ?>"></td>
                                   <td>
                                       <select name="locationChange">
                                         <?php
@@ -162,6 +165,7 @@ if (isset($_POST['update'])) {
     $psu_ticket_up = mysqli_real_escape_string($db, $_POST['psu-ticket']);
     $psu_location_up = mysqli_real_escape_string($db, $_POST['locationChange']);
     $psu_customer_name_up = mysqli_real_escape_string($db, $_POST['customerChange']);
+    $psu_condition = mysqli_real_escape_string($db, $_POST['psu-condition']);
 
     $update_query =
         "
@@ -172,7 +176,8 @@ if (isset($_POST['update'])) {
                 psu_model = '$psu_model_up',
                 location_id = '$psu_location_up',
                 customer_id = '$psu_customer_name_up',
-                ticket = '$psu_ticket_up'
+                ticket = '$psu_ticket_up',
+                psu_condition = '$psu_condition'
             WHERE
                 psu_id = $psu_id;
 
@@ -188,12 +193,12 @@ if (isset($_POST['update'])) {
     }
 }
 
-$columns = ['psu_model', 'psu_sn', 'ticket', 'location_name', 'customer_name'];
+$columns = ['psu_model', 'psu_sn', 'psu_condition', 'ticket', 'location_name', 'customer_name'];
 $get_psu_data_xlsx =
     "
 
                 SELECT 
-                  ps.psu_model, ps.psu_sn, ps.ticket, l.location_name, c.customer_name
+                  ps.psu_model, ps.psu_sn, psu_condition, ps.ticket, l.location_name, c.customer_name
                 FROM power_supplies ps
                   JOIN locations l ON ps.location_id = l.location_id
                   JOIN customers c ON ps.customer_id = c.customer_id 

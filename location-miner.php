@@ -33,7 +33,7 @@ if(!isset($_SESSION['username'])){
               "
 
                 SELECT 
-                  m.miner_id, m.miner_sn, m.miner_model, m.customer_id , m.miner_label, m.psu_model, m.psu_sn, l.location_name, l.location_id, c.customer_id ,c.customer_name
+                  m.miner_id, m.miner_sn, m.miner_model, m.customer_id , m.miner_label, m.psu_model, m.psu_sn, l.location_name, l.location_id, c.customer_id ,c.customer_name, m.miner_condition
                 FROM miners m
                   JOIN locations l ON m.location_id = l.location_id
                   JOIN customers c ON m.customer_id = c.customer_id 
@@ -55,6 +55,7 @@ if(!isset($_SESSION['username'])){
                         <th>Model</th>
                         <th>PSU Model</th>
                         <th>PSU SN</th>
+                        <th>Condition</th>
                         <th>Location</th>
                         <th>Customer Name</th>
                         <th>Operations</th>
@@ -73,6 +74,7 @@ if(!isset($_SESSION['username'])){
                         $miner_psu_sn = $miner_row['psu_sn'];
                         $miner_location_id = $miner_row['location_id'];
                         $miner_location = $miner_row['location_name'];
+                        $miner_condition = $miner_row['miner_condition'];
                         ?>
                         <tr>
                             <form method="POST" action="">
@@ -81,6 +83,8 @@ if(!isset($_SESSION['username'])){
                                 <td><input type="text" name="miner-model" value="<?php echo htmlspecialchars($miner_model); ?>"></td>
                                 <td><input type="text" name="miner-psu-model" value="<?php echo htmlspecialchars($miner_psu_model); ?>"></td>
                                 <td><input type="text" name="miner-psu-sn" value="<?php echo htmlspecialchars($miner_psu_sn); ?>"></td>
+                                <td><input type="text" name="miner-condition" value="<?php echo htmlspecialchars($miner_condition); ?>"></td>
+
                                 <td>
                                     <select name="locationChange">
                                       <?php
@@ -169,6 +173,7 @@ if(isset($_POST['update'])){
     $miner_psu_sn_up = mysqli_real_escape_string($db, $_POST['miner-psu-sn']);
     $miner_location_up = mysqli_real_escape_string($db, $_POST['locationChange']);
     $miner_customer_name_up = mysqli_real_escape_string($db, $_POST['customerChange']);
+    $miner_condition = mysqli_real_escape_string($db, $_POST['miner-condition']);
 
     $update_query = "
             UPDATE miners 
@@ -179,7 +184,8 @@ if(isset($_POST['update'])){
                 psu_model = '$miner_psu_model_up',
                 psu_sn = '$miner_psu_sn_up',
                 location_id = '$miner_location_up',
-                customer_id = '$miner_customer_name_up'
+                customer_id = '$miner_customer_name_up',
+                miner_condition = '$miner_condition'
             WHERE
                 miner_id = $miner_id;
             ";
@@ -196,12 +202,12 @@ if(isset($_POST['update'])){
 
 //Export to XLSX function
 
-$columns = ['miner_label', 'miner_sn', 'miner_model', 'psu_model', 'psu_sn', 'location_name', 'customer_name'];
+$columns = ['miner_label', 'miner_sn', 'miner_model', 'psu_model', 'psu_sn', 'miner_condition', 'location_name', 'customer_name'];
 $get_miner_data_xlsx =
               "
 
                 SELECT 
-                  m.miner_label, m.miner_sn, m.miner_model, m.psu_model, m.psu_sn, l.location_name, c.customer_name
+                  m.miner_label, m.miner_sn, m.miner_model, m.psu_model, m.psu_sn, m.miner_condition, l.location_name, c.customer_name
                 FROM miners m
                   JOIN locations l ON m.location_id = l.location_id
                   JOIN customers c ON m.customer_id = c.customer_id 

@@ -5,7 +5,7 @@ require 'functions/export.php';
 
 session_start();
 if(!isset($_SESSION['username'])){
-  header("Location: login.php");
+  header("Location: login");
   exit();
 }
 
@@ -110,7 +110,7 @@ if(!isset($_SESSION['username'])){
 
                                   <td class="operations">
                                       <button type="submit" name="update" style="background-color: transparent; border: none; cursor: pointer;" value="<?php echo $psu_id; ?>">✔️</button>
-                                      <a href="location-psu.php?delete=<?php echo $psu_id;?>" class="myLink">❌</a>
+                                      <a href="location-psu?delete=<?php echo $psu_id;?>" class="myLink">❌</a>
                                   </td>
                               </form>
                           </tr>

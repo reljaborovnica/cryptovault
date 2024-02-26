@@ -4,7 +4,7 @@ require 'includes/db.php';
 
 session_start();
 if(!isset($_SESSION['username'])){
-  header("Location: login.php");
+  header("Location: login");
   exit();
 }
 
@@ -54,19 +54,19 @@ if(!isset($_SESSION['username'])){
         </thead>
         <tbody>
           <tr>
-          <td><a href="customer-miners/id=<?php echo $customer_id;?>">View Customer Miners (<?php echo $m_count;?>)</a></td>
+          <td><a href="customer-miner?id=<?php echo $customer_id;?>">View Customer Miners (<?php echo $m_count;?>)</a></td>
             <td>View all miners for a specific customer.</td>
           </tr>
           <tr>
-            <td><a href="customer-psu.php?id=<?php echo $customer_id;?>">View Customer Power Supplies (<?php echo $p_count;?>)</a></td>
+            <td><a href="customer-psu?id=<?php echo $customer_id;?>">View Customer Power Supplies (<?php echo $p_count;?>)</a></td>
             <td>View all power supplies for a specific customer.</td>
           </tr>
           <tr>
-            <td><a href="customer-cb.php?id=<?php echo $customer_id;?>">View Customer Control Boards (<?php echo $cb_count;?>)</a></td>
+            <td><a href="customer-cb?id=<?php echo $customer_id;?>">View Customer Control Boards (<?php echo $cb_count;?>)</a></td>
             <td>View all control boards for a specific customer.</td>
           </tr>
           <tr>
-            <td><a href="customer-fan.php?id=<?php echo $customer_id;?>">View Customer Fans (<?php echo $fan_count;?>) </a></td>
+            <td><a href="customer-fan?id=<?php echo $customer_id;?>">View Customer Fans (<?php echo $fan_count;?>) </a></td>
             <td>View all fans for a specific customer.</td>
           </tr>
         </tbody>

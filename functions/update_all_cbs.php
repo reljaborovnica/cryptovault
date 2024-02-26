@@ -4,35 +4,35 @@ require '../includes/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (
-        isset($_POST['psuId']) &&
-        isset($_POST['psuSn']) &&
-        isset($_POST['psuModel']) &&
-        isset($_POST['psuCondition']) &&
-        isset($_POST['psuTicket']) &&
+        isset($_POST['cbId']) &&
+        isset($_POST['cbSn']) &&
+        isset($_POST['cbModel']) &&
+        isset($_POST['cbCondition']) &&
+        isset($_POST['cbTicket']) &&
         isset($_POST['locationId']) &&
         isset($_POST['customerId'])
     ) {
-        $psuId = (int)$_POST['psuId'];
-        $psuSn = mysqli_real_escape_string($db, $_POST['psuSn']);
-        $psuModel = mysqli_real_escape_string($db, $_POST['psuModel']);
-        $psuCondition = mysqli_real_escape_string($db, $_POST['psuCondition']);
-        $psuTicket = mysqli_real_escape_string($db, $_POST['psuTicket']);
+        $cbId = (int)$_POST['cbId'];
+        $cbSn = mysqli_real_escape_string($db, $_POST['cbSn']);
+        $cbModel = mysqli_real_escape_string($db, $_POST['cbModel']);
+        $cbCondition = mysqli_real_escape_string($db, $_POST['cbCondition']);
+        $cbTicket = mysqli_real_escape_string($db, $_POST['cbTicket']);
         $locationId = (int)$_POST['locationId'];
         $customerId = (int)$_POST['customerId'];
 
         $update_query =
             "
-            UPDATE power_supplies
+            UPDATE control_boards
             SET
-                psu_sn = '$psuSn',
-                psu_model = '$psuModel',
-                psu_sn = '$psuSn',
+                cb_sn = '$cbSn',
+                cb_model = '$cbModel',
+                cb_sn = '$cbSn',
                 location_id = $locationId,
                 customer_id = $customerId,
-                psu_condition = '$psuCondition',
-                ticket = '$psuTicket'
+                cb_condition = '$cbCondition',
+                ticket = '$cbTicket'
             WHERE
-                psu_id = $psuId;
+                cb_id = $cbId;
             ";
 
         $run_uq = mysqli_query($db, $update_query);

@@ -17,6 +17,7 @@ if(!isset($_SESSION['username'])){
     <link rel="icon" type="image/x-icon" href="images/warehouse.png">
     <link rel="stylesheet" href="/cryptovault/css/navbar.css"/>
     <link rel="stylesheet" href="/cryptovault/css/tables.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
 
@@ -130,20 +131,30 @@ if(!isset($_SESSION['username'])){
     </div>
   </div>
 
-<?php
-if(empty($search) && $count > 0){
-?>
+    <?php
+
+    if(empty($search) && $count > 0){
+    ?>
 
     <div style="text-align: center;">
-      <form method="POST">
-        <button type="submit" name="export" style="font-family: 'Roboto'; background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Export to Excel</button>
-      </form>
-    </div>
 
-<?php
-  } 
-?>  
+      <div style="text-align: center;">
+        <div style="display: inline-block;">
+          <form method="POST">
+            <button type="submit" name="export" style="font-family: 'Roboto'; background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Export to Excel</button>
+          </form>
+        </div>
+        <div style="display: inline-block; margin-left: 10px;">
+          <div style="text-align: center;">
+            <button id="updateAllCbs" style="font-family: 'Roboto'; background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Update All Fields</button>
+          </div>
+        </div>
 
+      <?php
+        } 
+      ?>  
+
+  <script src="./js/updateAllCFields.js"></script>
   <script src="./js/confirmation.js"></script>
 
 </body>

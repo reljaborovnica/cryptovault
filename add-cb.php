@@ -63,12 +63,12 @@ if(!isset($_SESSION['username'])){
           </select>
 
 
-          <input type="submit" value="Submit" name="add-cb">
+          <input type="submit" value="Add control board" name="add-cb" style="font-family: Montserrat; font-weight: 600;">
         </form>
       </div>
             <div class="etc"><br><br>
 
-        <a href="add-cbs" style="text-decoration: none; color: #ffffff; padding: 12px 24px; background-color: #4CAF50; border-radius: 8px; border: 2px solid #4CAF50; font-weight: bold; text-transform: uppercase; transition: background-color 0.3s ease;">Add Multiple Control Boards</a>
+        <a href="add-cbs" style="text-decoration: none; color: #ffffffdb; padding: 12px 24px; background-color: #88ac81; border-radius: 2px; border: 3px solid #63885c; font-weight: bold; text-transform: uppercase; transition: background-color 0.3s ease;">Add Multiple Control Boards</a>
 
       </div>
     </div>

@@ -155,10 +155,11 @@ if(!isset($_SESSION['username'])){
 
 
     </div>
+    <base href="/cryptovault/">
 
-    <script src="./js/updateAllPFields.js"></script> 
-    <script src="./js/confirmation.js"></script>
-    <script src="./js/additions.js"></script>
+    <script src="/cryptovault/js/updateAllPFields.js"></script> 
+    <script src="/cryptovault/js/confirmation.js"></script>
+    <script src="/cryptovault/js/additions.js"></script>
   </body>
 </html>
 

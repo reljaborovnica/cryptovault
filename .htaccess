@@ -2,6 +2,8 @@ RewriteEngine on
 
 RewriteBase /cryptovault/
 
+RewriteCond %{REQUEST_URI} !^/cryptovault/js/ [NC]
+
 RewriteRule ^miner/search/([^/]+)/?$ miner.php?search=$1 [L,QSA]
 RewriteCond %{QUERY_STRING} ^search=(.+)&search-btn=Search$
 RewriteRule ^miner.php$ miner/search/%1? [R=301,L]

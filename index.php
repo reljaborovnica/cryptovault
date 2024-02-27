@@ -38,7 +38,7 @@ if(!isset($_SESSION['username'])){
         }
         .table-container h2 {
             background-color: #555;
-            color: #fff;
+            color: #ffffffdb;
             padding: 10px;
             margin: 0;
             border-top-left-radius: 8px;
@@ -55,7 +55,7 @@ if(!isset($_SESSION['username'])){
         }
         th {
             background-color: #333;
-            color: #fff;
+            color: #ffffffdb;
         }
         tr.clickable {
           cursor: pointer;
@@ -197,9 +197,9 @@ if(!isset($_SESSION['username'])){
                     $customer_name = $fetch_glp['customer_name'];
                 ?>
                 <tr class="clickable" onclick="window.location='psu/search/<?php echo $psu_sn;?>'">
-                    <td><a href="psu/search/<?php echo $psu_sn;?>"><?php echo $psu_sn;?></td>
-                    <td><a href="psu/search/<?php echo $psu_sn;?>"><?php echo $psu_model;?></td>
-                    <td><a href="psu/search/<?php echo $psu_sn;?>"><?php echo $customer_name;?></td>
+                    <td><a href="psu/search/<?php echo $psu_sn;?>"><?php echo $psu_sn;?></a></td>
+                    <td><a href="psu/search/<?php echo $psu_sn;?>"><?php echo $psu_model;?></a></td>
+                    <td><a href="psu/search/<?php echo $psu_sn;?>"><?php echo $customer_name;?></a></td>
                 </tr>
                 <?php } ?>
             </tbody>
@@ -236,9 +236,9 @@ if(!isset($_SESSION['username'])){
                     $customer_name = $fetch_glc['customer_name'];
                 ?>
                 <tr class="clickable" onclick="window.location='cb/search/<?php echo $cb_sn;?>'">
-                    <td><a href="cb/search/<?php echo $cb_sn;?>"><?php echo $cb_sn;?></td>
-                    <td><a href="cb/search/<?php echo $cb_sn;?>"><?php echo $cb_model;?></td>
-                    <td><a href="cb/search/<?php echo $cb_sn;?>"><?php echo $customer_name;?></td>
+                    <td><a href="cb/search/<?php echo $cb_sn;?>"><?php echo $cb_sn;?></a></td>
+                    <td><a href="cb/search/<?php echo $cb_sn;?>"><?php echo $cb_model;?></a></td>
+                    <td><a href="cb/search/<?php echo $cb_sn;?>"><?php echo $customer_name;?></a></td>
                 </tr>
                 <?php } ?>
             </tbody>

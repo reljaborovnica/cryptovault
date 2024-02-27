@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 body {
-  font-family: 'Montserrat', sans-serifc;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   color: #ffffffdb;
   margin: 0;
@@ -37,7 +35,9 @@ input[type="submit"] {
   border: none;
   border-radius: 5px;
   background-color: #333;
-  color: #fff;
+  color: #ffffffdb;
+  font-family: Montserrat;
+  font-weight: 600;
 }
 
 input[type="text"]:focus{
@@ -45,13 +45,13 @@ input[type="text"]:focus{
 }
 
 input[type="submit"] {
-  background-color: #4CAF50;
+  background-color: #88ac81;
   width: 100%; 
   cursor: pointer;
 }
 
 input[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: #63885c;
 }
 
 select {
@@ -61,7 +61,7 @@ select {
   border: none;
   border-radius: 5px;
   background-color: #333;
-  color: #fff;
+  color: #ffffffdb;
   font-size: 16px;
 }
 
@@ -72,7 +72,7 @@ select {
 #etc a {
   text-align: center;
   text-decoration: none;
-  color: #4CAF50;
+  color: #88ac81;
 }
 
 #etc a:hover {

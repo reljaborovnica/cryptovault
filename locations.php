@@ -20,7 +20,7 @@ if(!isset($_SESSION['username'])){
   </head>
   <body>
 
-    <?php include 'includes/navigation.php';?>
+  <?php include 'includes/navigation.php';?>
 
     <div class="container">
       <div class="table-container">
@@ -42,7 +42,7 @@ if(!isset($_SESSION['username'])){
               $location_name = $fetch_q_gal['location_name'];
             ?>
             <tr>
-              <td><a href="location?locationAll=<?php echo $location_id;?>"> <?php echo $location_name; ?></td>
+              <td><a href="location?locationAll=<?php echo $location_id;?>"> <?php echo $location_name; ?></a></td>
               <td class="operations">
                 <?php
                 $check_miners_query = mysqli_query($db, "SELECT COUNT(*) AS total_miners FROM miners WHERE location_id = '$location_id'");

@@ -10,7 +10,7 @@ body {
 .container {
   display: flex;
   height: 100vh;
-}
+ }
 
 .login-container {
   background-color: #444;
@@ -21,6 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center; 
+
 }
 
 .login-container h2 {
@@ -58,14 +59,14 @@ body {
   padding: 10px;
   border: none;
   border-radius: 3px;
-  background-color: #4CAF50;
+  background-color: #88ac81;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .login-btn:hover {
-  background-color: #45a049;
+  background-color: #63885c;
 }
 
 .right-content {

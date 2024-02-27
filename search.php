@@ -22,7 +22,7 @@ if(!isset($_SESSION['username'])){
   </head>
   <body>
 
-    <?php include 'includes/navigation.php';?>
+  <?php include 'includes/navigation.php';?>
 
     <div class="container">
       <div class="form-container">
@@ -35,12 +35,12 @@ if(!isset($_SESSION['username'])){
         </form>
 
         <form action="psu.php" method="GET">
-          <input type="text" id="search" name="search" placeholder="Search for a PSU by SN, Model or Condition " required>
+          <input type="text" id="search" name="search" placeholder="Search for a PSU(s) by SN, Model or Condition " required>
           <input type="submit" value="Search" name="search-btn-psu">
         </form>
 
         <form action="cb.php" method="GET">
-          <input type="text" id="search" name="search" placeholder="Search for a CB by SN, Model or Condition " required>
+          <input type="text" id="search" name="search" placeholder="Search for a CB(s) by SN, Model or Condition " required>
           <input type="submit" value="Search" name="search-btn-cb">
         </form>
       </div>

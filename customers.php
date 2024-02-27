@@ -21,7 +21,7 @@ if(!isset($_SESSION['username'])){
   </head>
   <body>
 
-    <?php include 'includes/navigation.php';?>
+  <?php include 'includes/navigation.php';?>
 
     <div class="container">
       <div class="table-container">
@@ -43,7 +43,7 @@ if(!isset($_SESSION['username'])){
               $customer_name = $fetch_q_gac['customer_name'];
             ?>
             <tr>
-              <td><a href="customer?customerAll=<?php echo $customer_id;?>"> <?php echo $customer_name; ?></td>
+              <td><a href="customer?customerAll=<?php echo $customer_id;?>"> <?php echo $customer_name; ?></a></td>
               <td class="operations">
                 <?php
                 $check_miners_query = mysqli_query($db, "SELECT COUNT(*) AS total_miners FROM miners WHERE customer_id = '$customer_id'");

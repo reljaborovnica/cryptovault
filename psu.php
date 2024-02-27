@@ -158,6 +158,7 @@ if(!isset($_SESSION['username'])){
 
     <script src="./js/updateAllPFields.js"></script> 
     <script src="./js/confirmation.js"></script>
+    <script src="./js/additions.js"></script>
   </body>
 </html>
 

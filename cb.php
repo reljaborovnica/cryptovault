@@ -130,6 +130,7 @@ if(!isset($_SESSION['username'])){
       ?>
     </div>
   </div>
+  <script src="./js/additions.js"></script>
 
     <?php
 

@@ -161,6 +161,7 @@ if(!isset($_SESSION['username'])){
 
     <script src="./js/updateAllFields.js"></script>
     <script src="./js/confirmation.js"></script>
+    <script src="./js/additions.js"></script>
 
   </body>
 </html>

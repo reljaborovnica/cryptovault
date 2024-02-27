@@ -19,6 +19,7 @@ if(!isset($_SESSION['username'])){
     <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/tables.css">
     <link rel="stylesheet" href="./css/cust-all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
 
@@ -72,6 +73,8 @@ if(!isset($_SESSION['username'])){
         </tbody>
       </table>
     </div>
+    <script src="./js/additions.js"></script>
+
   </body>
 </html>
 <?php

@@ -13,6 +13,7 @@ if(!isset($_SESSION['username'])){
     <link rel="icon" type="image/x-icon" href="images/warehouse.png">
     <link rel="stylesheet" href="./css/navbar.css"/>
     <link rel="stylesheet" href="./css/form.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -60,6 +61,7 @@ if(!isset($_SESSION['username'])){
         </form>
     </div>
 </div>
+    <script src="./js/additions.js"></script>
 </body>
 </html>
 

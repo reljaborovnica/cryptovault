@@ -18,6 +18,7 @@ if(!isset($_SESSION['username'])){
   <link rel="stylesheet" href="./css/navbar.css">
   <link rel="stylesheet" href="./css/form.css">
   <link rel="stylesheet" href="./tables.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
 
@@ -43,8 +44,8 @@ if(!isset($_SESSION['username'])){
           <input type="submit" value="Search" name="search-btn-cb">
         </form>
       </div>
-    </div>
-
+    </div>  
+    <script src="./js/additions.js"></script>
   </body>
 </html>
 

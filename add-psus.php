@@ -17,6 +17,7 @@ if(!isset($_SESSION['username'])){
     <link rel="icon" type="image/x-icon" href="images/warehouse.png">
     <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/mtables.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>CryptoVault - Add PSUS</title>
 </head>
 <body>
@@ -102,5 +103,6 @@ if(!isset($_SESSION['username'])){
     
 
     <script src="./js/add.js"></script>
+    <script src="./js/additions.js"></script>
 </body>
 </html>

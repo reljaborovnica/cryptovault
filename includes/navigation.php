@@ -9,7 +9,7 @@
   <a href="/cryptovault/locations" style="color: #eeeeee; background-color: transparent;" onmouseover="this.style.backgroundColor='#222';" onmouseout="this.style.backgroundColor='transparent';">Locations</a>
   <a href="/cryptovault/customers" style="color: #eeeeee; background-color: transparent;" onmouseover="this.style.backgroundColor='#222';" onmouseout="this.style.backgroundColor='transparent';">Customers</a>
   <a href="/cryptovault/search" style="color: #eeeeee; background-color: transparent;" onmouseover="this.style.backgroundColor='#222';" onmouseout="this.style.backgroundColor='transparent';">Lookup</a>
-  <a href="#" style="float: right; background-color: #569948;"><span class="usersonline"></span></a>
-  <a href="/cryptovault/logout" style="color: #eeeeee; background-color: transparent; float: left;" onmouseover="this.style.backgroundColor='#222';" onmouseout="this.style.backgroundColor='transparent';">Logout</a>
+  <a href="/cryptovault/logout" style="color: #eeeeee; float: right;" onmouseover="this.style.backgroundColor='#222';" onmouseout="this.style.backgroundColor='transparent';">Logout</a>
+  <a href="#" style="float: right; background-color: #88ac81; color: #ffffffdb;"><span class="usersonline"></span></a>
 </div>
 

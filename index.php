@@ -21,7 +21,7 @@ if(!isset($_SESSION['username'])){
     <style>
         body {
             background-color: #222;
-            color: #fff;
+            color: #ffffffdb;
         }
         .container {
             display: flex;
@@ -120,7 +120,7 @@ if(!isset($_SESSION['username'])){
     </div>
     <div class="table-container">
 
-        <h2>Latest added miners (Top 10)</h2>
+        <h2>Latest added miners - Top 10 </h2>
         <table>
             <thead>
                 <tr>
@@ -168,7 +168,7 @@ if(!isset($_SESSION['username'])){
     </div>
 
     <div class="table-container">
-        <h2>Latest added power supplies (Top 10)</h2>
+        <h2>Latest added power supplies - Top 10</h2>
         <table>
             <thead>
                 <tr>
@@ -207,7 +207,7 @@ if(!isset($_SESSION['username'])){
     </div>
 
     <div class="table-container">
-        <h2>Latest added control boards (Top 10)</h2>
+        <h2>Latest added control boards - Top 10</h2>
         <table>
             <thead>
                 <tr>

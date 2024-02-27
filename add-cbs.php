@@ -99,8 +99,10 @@ if(!isset($_SESSION['username'])){
         </div>
 
         <div style="display: flex; justify-content: center; align-items: flex-end;">
-            <button type="button" id="add-btn">+ Add Item</button>
-            <input type="submit" style="width: auto; height: 50px; margin: 0 10px">
+
+            <button type="button" id="add-btn">+ Add row</button>
+            <input type="submit" value="Add CBs" style="width: auto; height: 50px; margin: 0 10px;">
+
         </div>
     </form>
     

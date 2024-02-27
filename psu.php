@@ -140,12 +140,12 @@ if(!isset($_SESSION['username'])){
       <div style="text-align: center;">
         <div style="display: inline-block;">
           <form method="POST">
-            <button type="submit" name="export" style="font-family: 'Roboto'; background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Export to Excel</button>
+        <button type="submit" name="export" style="font-family: Montserrat; font-weight: 600; background-color: #88ac81; color: #ffffffdb; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Export to Excel</button>
           </form>
         </div>
         <div style="display: inline-block; margin-left: 10px;">
           <div style="text-align: center;">
-            <button id="updateAllPsus" style="font-family: 'Roboto'; background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Update All Fields</button>
+            <button id="updateAllPsus" style="font-family: 'Montserrat'; font-weight: 600; background-color: #88ac81; color: #ffffffdb; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Update All Fields</button>
           </div>
         </div>
 

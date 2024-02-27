@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 :root {
   --shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
 }
 
 body {
-  font-family: 'Roboto', sans-serifc;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
   background-color: #222;
-  color: #fff;
+  color: #ffffffdb;
   margin: 0;
   padding: 0;
+  font-weight: 600;
 }
 
 .container {
@@ -88,6 +88,8 @@ input[type="submit"] {
   border-radius: 5px;
   background-color: #333;
   color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
 }
 
 input[type="text"]:focus{
@@ -95,16 +97,20 @@ input[type="text"]:focus{
 }
 
 input[type="submit"] {
-   background-color: #4CAF50;
+   background-color: #88ac81;
    cursor: pointer;
 }
 
+input[type="submit"]:hover{
+  background-color: #546247;
+}
+
 tbody.select-all tr > *{
-  background-color: #A0522D;
+  background-color: #88ac81;
 }
 
 tbody.select-all tr td * {
-  background-color: #8B4513;
+  background-color: #546247;
 }
 
 select {

@@ -29,17 +29,17 @@ if(!isset($_SESSION['username'])){
         <h2>Inventory Search</h2>
 
 
-        <form action="miner.php" method="GET">
+        <form action="miner" method="GET">
           <input type="text" id="search" name="search" placeholder="Search for a Miner(s) by SN, Label, Model or Condition " required>
           <input type="submit" value="Search" name="search-btn">
         </form>
 
-        <form action="psu.php" method="GET">
+        <form action="psu" method="GET">
           <input type="text" id="search" name="search" placeholder="Search for a PSU(s) by SN, Model or Condition " required>
           <input type="submit" value="Search" name="search-btn-psu">
         </form>
 
-        <form action="cb.php" method="GET">
+        <form action="cb" method="GET">
           <input type="text" id="search" name="search" placeholder="Search for a CB(s) by SN, Model or Condition " required>
           <input type="submit" value="Search" name="search-btn-cb">
         </form>

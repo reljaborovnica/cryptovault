@@ -37,7 +37,8 @@ if(!isset($_SESSION['username'])){
                   JOIN locations l ON cb.location_id = l.location_id
                   JOIN customers c ON cb.customer_id = c.customer_id 
                 WHERE 
-                  cb.cb_sn LIKE '%$search%' OR cb.cb_model LIKE '%$search%' OR cb.cb_condition LIKE '%$search%';
+                  cb.cb_sn LIKE '%$search%' OR cb.cb_model LIKE '%$search%' OR cb.cb_condition LIKE '%$search%'
+                ORDER BY cb.cb_id DESC;
 
                 ";
 

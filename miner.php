@@ -37,7 +37,8 @@ if(!isset($_SESSION['username'])){
                       JOIN locations l ON m.location_id = l.location_id
                       JOIN customers c ON m.customer_id = c.customer_id 
                     WHERE 
-                      m.miner_label LIKE '%$search%' OR m.miner_sn LIKE '%$search%' or m.miner_model LIKE '%$search%' or m.miner_condition LIKE '%$search%';
+                      m.miner_label LIKE '%$search%' OR m.miner_sn LIKE '%$search%' or m.miner_model LIKE '%$search%' or m.miner_condition LIKE '%$search%'
+                    ORDER BY m.miner_id DESC;
                   ";
 
                 $miner_result = mysqli_query($db, $get_miner_data);

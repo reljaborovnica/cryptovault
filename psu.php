@@ -38,8 +38,8 @@ if(!isset($_SESSION['username'])){
                   JOIN locations l ON ps.location_id = l.location_id
                   JOIN customers c ON ps.customer_id = c.customer_id 
                 WHERE 
-                  ps.psu_sn LIKE '%$search%' OR ps.psu_model LIKE '%$search%' OR ps.psu_condition LIKE '%$search%';
-
+                  ps.psu_sn LIKE '%$search%' OR ps.psu_model LIKE '%$search%' OR ps.psu_condition LIKE '%$search%'
+                ORDER BY ps.psu_id DESC; 
                 ";
 
             $psu_result = mysqli_query($db, $get_psu_data);

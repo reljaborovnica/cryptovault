@@ -154,7 +154,7 @@ if(!isset($_SESSION['username'])){
                     $miner_psu_sn = $fetch_glm['psu_sn'];
                     $customer_name = $fetch_glm['customer_name'];
                 ?>
-                <tr class="clickable" onclick="window.location='miner/search/<?php echo $miner_sn;?>'">
+                <tr class="clickable" onclick="window.location='miner?search=<?php echo $miner_sn;?>'">
                     <td><?php echo htmlspecialchars($miner_label);?></td>
                     <td><?php echo htmlspecialchars($miner_sn);?></td>
                     <td><?php echo htmlspecialchars($miner_model);?></td>
@@ -196,10 +196,10 @@ if(!isset($_SESSION['username'])){
                     $psu_sn = $fetch_glp['psu_sn'];
                     $customer_name = $fetch_glp['customer_name'];
                 ?>
-                <tr class="clickable" onclick="window.location='psu/search/<?php echo $psu_sn;?>'">
-                    <td><a href="psu/search/<?php echo $psu_sn;?>"><?php echo $psu_sn;?></a></td>
-                    <td><a href="psu/search/<?php echo $psu_sn;?>"><?php echo $psu_model;?></a></td>
-                    <td><a href="psu/search/<?php echo $psu_sn;?>"><?php echo $customer_name;?></a></td>
+                <tr class="clickable" onclick="window.location='psu?search=<?php echo $psu_sn;?>'">
+                    <td><a href="psu?search=<?php echo $psu_sn;?>"><?php echo $psu_sn;?></a></td>
+                    <td><a href="psu?search=<?php echo $psu_sn;?>"><?php echo $psu_model;?></a></td>
+                    <td><a href="psu?search=<?php echo $psu_sn;?>"><?php echo $customer_name;?></a></td>
                 </tr>
                 <?php } ?>
             </tbody>
@@ -235,10 +235,10 @@ if(!isset($_SESSION['username'])){
                     $cb_sn = $fetch_glc['cb_sn'];
                     $customer_name = $fetch_glc['customer_name'];
                 ?>
-                <tr class="clickable" onclick="window.location='cb/search/<?php echo $cb_sn;?>'">
-                    <td><a href="cb/search/<?php echo $cb_sn;?>"><?php echo $cb_sn;?></a></td>
-                    <td><a href="cb/search/<?php echo $cb_sn;?>"><?php echo $cb_model;?></a></td>
-                    <td><a href="cb/search/<?php echo $cb_sn;?>"><?php echo $customer_name;?></a></td>
+                <tr class="clickable" onclick="window.location='cb?search=<?php echo $cb_sn;?>'">
+                    <td><a href="cb?search=<?php echo $cb_sn;?>"><?php echo $cb_sn;?></a></td>
+                    <td><a href="cb?search=<?php echo $cb_sn;?>"><?php echo $cb_model;?></a></td>
+                    <td><a href="cb?search=<?php echo $cb_sn;?>"><?php echo $customer_name;?></a></td>
                 </tr>
                 <?php } ?>
             </tbody>

@@ -19,14 +19,22 @@ while ($row = mysqli_fetch_assoc($q_fac)) {
     $customers[$row['customer_name']] = $row['customer_id'];
 }
 
-// Function to map names to IDs dynamically
+
 function mapNameToId($name, $nameMap, $defaultId) {
-    if (isset($nameMap[$name])) {
-        return $nameMap[$name];
-    } else {
-        return $defaultId;
+    foreach ($nameMap as $storedName => $id) {
+        // Remove trailing whitespace from both names
+        $trimmedName = rtrim($name);
+        $trimmedStoredName = rtrim($storedName);
+        
+        // Use case-insensitive comparison to match names
+        if (strcasecmp($trimmedName, $trimmedStoredName) === 0) {
+            return $id;
+        }
     }
+    // If no exact match is found, return the default ID
+    return $defaultId;
 }
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     for ($i = 0; isset($_POST['label-' . $i]); $i++) {
@@ -49,9 +57,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$label', '$sn', '$model', '$psu_model', '$psu_sn', $locationId, $customerId, '$condition')
         ";
 
-        if (!mysqli_query($db, $add_m_miners)) {
-            die("Error adding miners: " . mysqli_error($db));
-        }
+       if (!mysqli_query($db, $add_m_miners)) {
+           die("Error adding miners: " . mysqli_error($db));
+    }
     }
 
     header("Location: /cryptovault/index" );

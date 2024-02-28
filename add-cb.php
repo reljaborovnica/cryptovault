@@ -63,7 +63,7 @@ if(!isset($_SESSION['username'])){
           </select>
 
 
-          <input type="submit" value="Add control board" name="add-cb" style="font-family: Montserrat; font-weight: 600;">
+          <input type="submit" value="Add control board" name="add-cb" style="font-family: Montserrat, sans-serif; font-weight: 600;">
         </form>
       </div>
             <div class="etc"><br><br>

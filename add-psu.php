@@ -67,7 +67,7 @@ if(!isset($_SESSION['username'])){
           </select>
 
 
-          <input type="submit" value="Add power supply" name="add-psu" style="font-family: Montserrat; font-weight: 600;">
+          <input type="submit" value="Add power supply" name="add-psu" style="font-family: Montserrat, sans-serif; font-weight: 600;">
         </form>
       </div><br>
       <div class="etc"><br><br>
